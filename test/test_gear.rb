@@ -17,3 +17,25 @@ class GearTest < Minitest::Test
     end
   end
 end
+
+class GearHelperTest < Minitest::Test
+  require_relative '../features/support/gear_helpers'
+
+  context 'the Gear helper function get_precision' do
+    should 'return precision from a float' do
+      assert_equal 5, get_precision(3.14159)
+    end
+
+    should 'return precision from a float string' do
+      assert_equal 4, get_precision('3.1416')
+    end
+
+    should 'return zero from an integer' do
+      assert_equal 0, get_precision(3)
+    end
+
+    should 'return zero from an integer string' do
+      assert_equal 0, get_precision('10')
+    end
+  end
+end
