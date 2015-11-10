@@ -22,11 +22,11 @@ class GearHelperTest < Minitest::Test
   require_relative '../features/support/gear_helpers'
 
   context 'the Gear helper function get_precision' do
-    should 'return precision from a float' do
+    should 'return its precision from a float' do
       assert_equal 5, get_precision(3.14159)
     end
 
-    should 'return precision from a float string' do
+    should 'return its precision from a float string' do
       assert_equal 4, get_precision('3.1416')
     end
 
