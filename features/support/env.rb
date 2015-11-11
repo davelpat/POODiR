@@ -1,4 +1,5 @@
 require_relative '../../lib/gear'
+require_relative '../../lib/wheel'
 
 require 'minitest'
 require 'minitest/spec'
