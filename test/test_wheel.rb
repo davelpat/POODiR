@@ -12,5 +12,9 @@ class WheelTest < Minitest::Test
     should 'return its total diameter' do
       assert_equal 29, @wheel.diameter
     end
+
+    should 'return its circumference' do
+      assert_equal 91.106186954104, @wheel.circumference
+    end
   end
 end
