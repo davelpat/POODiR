@@ -3,7 +3,13 @@ Given(/^a wheel with a (#{CAPTURE_NUMBER}) inch rim and a (#{CAPTURE_NUMBER}) ti
 end
 
 Given(/^a gearset has a chainring with (#{CAPTURE_NUMBER}) teeth and a cog with (#{CAPTURE_NUMBER}) teeth$/) do |chainring, cog|
-  @gearset = create_gearset chainring, cog, @wheel
+  @gearset = create_gearset chainring, cog
+end
+
+Given(/^a bicycle with the following wheel and gear set$/) do |table|
+  bike = table.hashes.first
+  @wheel = create_wheel bike['rim size'], bike['tire size']
+  @gearset = create_gearset bike['chainring'], bike['cog'], @wheel
 end
 
 When(/^I ask for the gear ratio$/) do

@@ -12,8 +12,9 @@ Feature: gear cenetric bicycle data
       | 40        | 10  | 4      |
 
   Scenario Outline: gear inches calculations
-    Given a wheel with a <rim size> inch rim and a <tire size> tire
-    And a gearset has a chainring with <chainring> teeth and a cog with <cog> teeth
+    Given a bicycle with the following wheel and gear set
+      | chainring   | cog   | rim size   | tire size   |
+      | <chainring> | <cog> | <rim size> | <tire size> |
     When I ask for the gear inches
     Then I should get a gear inches of about <gear inches>
 
