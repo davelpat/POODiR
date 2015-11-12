@@ -6,7 +6,7 @@ class WheelTest < Minitest::Test
 
   context 'the wheel' do
     setup do
-      @wheel = Wheel.new 26, 1.5
+      @wheel = Wheel.new :rim => 26, :tire => 1.5
     end
     
     should 'return its total diameter' do

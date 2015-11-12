@@ -8,8 +8,8 @@ class GearTest < Minitest::Test
 # to set up fixture information.
   context 'the gear' do
     setup do
-      @wheel = Wheel.new(26, 1.5)
-      @gear = Gear.new(52, 11, @wheel)
+      @wheel = Wheel.new(:rim => 26, :tire => 1.5)
+      @gear = Gear.new(:chainring => 52, :cog => 11, :wheel => @wheel)
     end
 
     # Gear ratio test

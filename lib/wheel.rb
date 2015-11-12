@@ -1,8 +1,13 @@
 class Wheel
   attr_reader :rim, :tire
-  def initialize(rim, tire)
-    @rim = rim
-    @tire = tire
+  def initialize(args)
+    args = default.merge(args)
+    @rim = args[:rim]
+    @tire = args[:tire]
+  end
+
+  def default
+    {:rim => 26, :tire => 1.5}
   end
 
   def diameter

@@ -1,9 +1,9 @@
 def create_wheel(rim, tire)
-  Wheel.new rim.to_f, tire.to_f
+  Wheel.new :rim => rim.to_f, :tire => tire.to_f
 end
 
 def create_gearset(chainring, cog, wheel=nil)
-  Gear.new chainring.to_i, cog.to_i, wheel
+  Gear.new :chainring => chainring.to_i, :cog => cog.to_i, :wheel => wheel
 end
 
 # get_precision returns the precision of the number or zero if an integer
