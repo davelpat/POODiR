@@ -1,3 +1,11 @@
+def create_wheel(rim, tire)
+  Wheel.new rim, tire
+end
+
+def create_gearset(chainring, cog, wheel=nil)
+  Gear.new chainring, cog, wheel
+end
+
 # get_precision returns the precision of the number or zero if an integer
 # @param [Float, Fixnum, String] num
 # @return [Fixnum]

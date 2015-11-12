@@ -8,12 +8,19 @@ class GearTest < Minitest::Test
 # to set up fixture information.
   context 'the gear' do
     setup do
-      @gear = Gear.new(52, 11)
+      @wheel = Wheel.new(26, 1.5)
+      @gear = Gear.new(52, 11, @wheel)
     end
 
     # Gear ratio test
     should 'return its ratio' do
       assert_equal 4.7272727272727275, @gear.ratio
+    end
+
+    # Gear inches test
+    # Sketchy; should have a bicycle class that is composed of a gear set and wheels
+    should 'return gear inches when passed a wheel diameter' do
+      assert_equal 137.0909090909091, @gear.gear_inches
     end
   end
 end
