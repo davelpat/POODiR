@@ -9,10 +9,11 @@ class GearTest < Minitest::Test
   context 'the gear' do
     setup do
       @wheel = Wheel.new(:rim => 26, :tire => 1.5)
-      @gear = Gear.new(:chainring => 52, :cog => 11, :wheel => @wheel)
+      @gear  = Gear.new(:chainring => 52, :cog => 11, :wheel => @wheel)
     end
 
     # Gear ratio test
+    # TODO: figure out Minitest fuzzy assertion
     should 'return its ratio' do
       assert_equal 4.7272727272727275, @gear.ratio
     end
@@ -30,19 +31,19 @@ class GearHelperTest < Minitest::Test
 
   context 'the Gear helper function get_precision' do
     should 'return its precision from a float' do
-      assert_equal 5, get_precision(3.14159)
+      assert_equal 5, get_precision_of(3.14159)
     end
 
     should 'return its precision from a float string' do
-      assert_equal 4, get_precision('3.1416')
+      assert_equal 4, get_precision_of('3.1416')
     end
 
     should 'return zero from an integer' do
-      assert_equal 0, get_precision(3)
+      assert_equal 0, get_precision_of(3)
     end
 
     should 'return zero from an integer string' do
-      assert_equal 0, get_precision('10')
+      assert_equal 0, get_precision_of('10')
     end
   end
 end

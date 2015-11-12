@@ -8,7 +8,7 @@ end
 
 Given(/^a bicycle with the following wheel and gear set$/) do |table|
   bike = table.hashes.first
-  @wheel = create_wheel bike['rim size'], bike['tire size']
+  @wheel   = create_wheel bike['rim size'], bike['tire size']
   @gearset = create_gearset bike['chainring'], bike['cog'], @wheel
 end
 

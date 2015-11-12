@@ -1,8 +1,8 @@
 class Wheel
   attr_reader :rim, :tire
   def initialize(args)
-    args = default.merge(args)
-    @rim = args[:rim]
+    args  = default.merge(args)
+    @rim  = args[:rim]
     @tire = args[:tire]
   end
 
